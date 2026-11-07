@@ -1,0 +1,51 @@
+{
+  "sources": [
+    {
+      "year": 2023,
+      "url": "https://assets.publishing.service.gov.uk/media/65d8b79e87005a001180f911/Civil_Service_People_Survey_2023_Benchmark_Results.ods",
+      "bytes": 231026,
+      "sha256": "042b2a1195e4ffcc6ffbbb1499e0b949c27b7a3798136dae7fcc2ee2d3eeef4e",
+      "entities": 107,
+      "selected_score_cells": 1391
+    },
+    {
+      "year": 2024,
+      "url": "https://assets.publishing.service.gov.uk/media/67974db0fadfcd21351e28dc/Civil_Service_People_Survey_2024_Benchmark_Results.ods",
+      "bytes": 236700,
+      "sha256": "74cde350fe2ea696e2533ce70a474c26621592d5a2d9e32a134b750a8d32f276",
+      "entities": 107,
+      "selected_score_cells": 1391
+    }
+  ],
+  "metric_definitions": 13,
+  "score_cells": 2782,
+  "missing_score_cells": 1,
+  "out_of_range_source_cells": [
+    {
+      "survey_year": 2023,
+      "entity_code": "GPA",
+      "metric_code": "response_rate",
+      "score_pct": null,
+      "missing_reason": "source_out_of_range:103.398"
+    }
+  ],
+  "current_reported_entities": 105,
+  "comparison_cells": 1365,
+  "comparable_delta_cells": 1221,
+  "review_scope_cells": 130,
+  "checks": {
+    "score_row_conservation": true,
+    "unique_score_keys": true,
+    "complete_metric_grid": true,
+    "score_bounds": true,
+    "missing_not_zero": true,
+    "foreign_keys": true,
+    "database_integrity": true,
+    "two_distinct_benchmarks": true,
+    "scope_changed_delta_withheld": true,
+    "no_person_identifiers": true
+  },
+  "checks_passed": 10,
+  "execution": "Python standard library and SQLite. Power BI DAX and Power Query are import handoffs.",
+  "interpretation": "Organisation scores are not additive; respondent-level sample sizes are unavailable. No significance or causal improvement is inferred."
+}

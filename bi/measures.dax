@@ -1,0 +1,22 @@
+-- Tables imported from scorecard.csv and year_comparison.csv.
+-- Source scores use a 0-100 scale. Display as 0.0, not as a fractional percentage.
+Selected Score =
+IF (
+    HASONEVALUE ( scorecard[survey_year] ) &&
+    HASONEVALUE ( scorecard[entity_code] ) &&
+    HASONEVALUE ( scorecard[metric_code] ),
+    MAX ( scorecard[score_pct] ),
+    BLANK ()
+)
+
+Comparable Change pp =
+IF (
+    HASONEVALUE ( year_comparison[entity_code] ) &&
+    HASONEVALUE ( year_comparison[metric_code] ) &&
+    SELECTEDVALUE ( year_comparison[comparability] ) = "same_reported_scope",
+    MAX ( year_comparison[change_pp] ),
+    BLANK ()
+)
+
+Unavailable Score Cells =
+COUNTROWS ( FILTER ( scorecard, ISBLANK ( scorecard[score_pct] ) ) )

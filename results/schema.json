@@ -1,0 +1,128 @@
+{
+  "entities": [
+    {
+      "cid": 0,
+      "name": "survey_year",
+      "type": "INTEGER",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 1
+    },
+    {
+      "cid": 1,
+      "name": "entity_code",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 2
+    },
+    {
+      "cid": 2,
+      "name": "entity_name",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 3,
+      "name": "department_group",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 4,
+      "name": "organisation_note",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 5,
+      "name": "entity_kind",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    }
+  ],
+  "metrics": [
+    {
+      "cid": 0,
+      "name": "metric_code",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 1
+    },
+    {
+      "cid": 1,
+      "name": "label",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 2,
+      "name": "capability",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 3,
+      "name": "favourable_direction",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    }
+  ],
+  "scores": [
+    {
+      "cid": 0,
+      "name": "survey_year",
+      "type": "INTEGER",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 1
+    },
+    {
+      "cid": 1,
+      "name": "entity_code",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 2
+    },
+    {
+      "cid": 2,
+      "name": "metric_code",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 3
+    },
+    {
+      "cid": 3,
+      "name": "score_pct",
+      "type": "REAL",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 4,
+      "name": "missing_reason",
+      "type": "TEXT",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    }
+  ]
+}

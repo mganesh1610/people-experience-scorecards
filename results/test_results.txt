@@ -1,0 +1,13 @@
+test_missing_previous_not_imputed (test_pipeline.Boundaries.test_missing_previous_not_imputed) ... ok
+test_notes_require_review (test_pipeline.Boundaries.test_notes_require_review) ... ok
+test_out_of_range_is_rejected (test_pipeline.Boundaries.test_out_of_range_is_rejected) ... ok
+test_percentage_points_not_relative_percent (test_pipeline.Boundaries.test_percentage_points_not_relative_percent) ... ok
+test_published_response_anomaly_is_retained (test_pipeline.Boundaries.test_published_response_anomaly_is_retained) ... ok
+test_scope_change_blocks_delta (test_pipeline.Boundaries.test_scope_change_blocks_delta) ... ok
+test_unavailable_is_not_zero (test_pipeline.Boundaries.test_unavailable_is_not_zero) ... ok
+test_zero_is_valid (test_pipeline.Boundaries.test_zero_is_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK

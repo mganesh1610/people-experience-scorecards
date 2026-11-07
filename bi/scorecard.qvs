@@ -1,0 +1,10 @@
+// Configure PeopleReporting as an approved folder connection in Qlik Sense.
+Scorecard:
+LOAD survey_year, entity_code, entity_name, department_group, entity_kind,
+     organisation_note, metric_code, label, capability, favourable_direction,
+     If(Len(Trim(score_pct))=0,Null(),Num#(score_pct,'0.############','.')) AS score_pct,
+     missing_reason
+FROM [lib://PeopleReporting/scorecard.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+// Measure: If(Count(DISTINCT survey_year)=1 AND Count(DISTINCT entity_code)=1
+// AND Count(DISTINCT metric_code)=1, Only(score_pct)). Never sum scores.
