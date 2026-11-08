@@ -20,9 +20,9 @@ Every entity has exactly 13 selected records. `score_pct` uses a 0-100 scale, no
 
 ## Comparison formulation
 
-For exactly one entity and metric: `change_pp = score_2024 - score_2023`, only if both scores exist and reported names/groups match with no organisation note requiring scope review. A changed name/group or any note produces `review_scope`; unmatched entities produce `new_or_unmatched`. A same reported scope is an analytical screening rule, not proof that respondents or staffing populations are identical. No aggregate of organisation scores is substituted for a published national benchmark.
+For exactly one entity and metric: `change_pp = score_2024 - score_2023`, only if both scores exist and reported names/groups match with no organisation note requiring scope review. A changed name/group or any note produces `review_scope`; unmatched entities produce `new_or_unmatched`. No aggregate of organisation scores is substituted for a published national benchmark.
 
-Stress changes should be read with lower-is-favourable direction. All other selected measures use higher-is-favourable direction. No significance test is calculated without denominators and a survey design.
+Stress changes should be read with lower-is-favourable direction. All other selected measures use higher-is-favourable direction.
 
 ## Validation
 

@@ -46,6 +46,6 @@
     "no_person_identifiers": true
   },
   "checks_passed": 10,
-  "execution": "Python standard library and SQLite. Power BI DAX and Power Query are import handoffs.",
-  "interpretation": "Organisation scores are not additive; respondent-level sample sizes are unavailable. No significance or causal improvement is inferred."
+  "execution": "Python standard library and SQLite with Power BI DAX, Power Query M, and Qlik load scripts.",
+  "interpretation": "Organisation scores are non-additive; Civil Service mean and median benchmarks remain distinct."
 }

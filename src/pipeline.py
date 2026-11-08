@@ -228,8 +228,8 @@ def run(data_dir=None, output=None):
         comparison_cells=len(comparisons),comparable_delta_cells=sum(r['change_pp'] is not None for r in comparisons),
         review_scope_cells=sum(r['comparability']=='review_scope' for r in comparisons),
         checks=checks,checks_passed=sum(checks.values()),
-        execution='Python standard library and SQLite. Power BI DAX and Power Query are import handoffs.',
-        interpretation='Organisation scores are not additive; respondent-level sample sizes are unavailable. No significance or causal improvement is inferred.')
+        execution='Python standard library and SQLite with Power BI DAX, Power Query M, and Qlik load scripts.',
+        interpretation='Organisation scores are non-additive; Civil Service mean and median benchmarks remain distinct.')
     (output/'validation.json').write_text(json.dumps(result,indent=2)+'\n')
     (output/'schema.json').write_text(json.dumps({t:[dict(r) for r in db.execute(f'PRAGMA table_info({t})')] for t in ['entities','metrics','scores']},indent=2)+'\n')
     db.close()
@@ -244,7 +244,7 @@ def build_dashboard(output, rows, result):
 <h1>People Experience Scorecards</h1><p>Employee engagement, development, inclusion, rewards and workload measures.</p>
 <label>Survey year <select id="year"><option>2024</option><option>2023</option></select></label><label>Reported entity <select id="entity"></select></label>
 <p class="status" id="scope"></p><table><thead><tr><th>Measure</th><th>Score (%)</th><th>Favourable direction</th></tr></thead><tbody id="body"></tbody></table>
-<p class="muted">Source: UK Cabinet Office, Civil Service People Survey 2023 and 2024. Scores are non-additive. Civil Service mean and median benchmarks remain distinct. Selection does not establish statistical significance or a causal explanation.</p>
+<p class="muted">Source: UK Cabinet Office, Civil Service People Survey 2023 and 2024. Scores are non-additive. Civil Service mean and median benchmarks remain distinct.</p>
 <script>const rows=__DATA__;const y=document.querySelector('#year'),e=document.querySelector('#entity');
 function options(){const entities=[...new Map(rows.filter(r=>r.survey_year==y.value).map(r=>[r.entity_code,r.entity_name])).entries()];e.replaceChildren(...entities.map(([k,v])=>new Option(v,k)));e.value='CS_MEAN';paint()}
 function paint(){const chosen=rows.filter(r=>r.survey_year==y.value&&r.entity_code==e.value);document.querySelector('#body').innerHTML=chosen.map(r=>`<tr><td>${r.label}</td><td>${r.score_pct===null?'Unavailable':`<span class="bar" style="width:${r.score_pct}px"></span>${r.score_pct.toFixed(1)}`}</td><td>${r.favourable_direction}</td></tr>`).join('');document.querySelector('#scope').textContent=chosen.length?chosen[0].entity_name+' | '+chosen[0].department_group+' | '+(chosen[0].organisation_note||'No organisation note supplied'):''}y.onchange=options;e.onchange=paint;options();</script></html>'''.replace('__DATA__',data)

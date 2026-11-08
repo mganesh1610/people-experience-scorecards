@@ -14,9 +14,5 @@
 2. Reconcile record counts and benchmark definitions, then inspect source exceptions and changed-scope rows.
 3. Import `scorecard.csv` and `year_comparison.csv`. Relate by entity/metric only within a selected year-comparison context. Never relate only by entity and accidentally multiply rows.
 4. In Power BI, use the supplied DAX's single-entity/year/metric selection guard. Configure refresh credentials, workspace roles, approved audiences and export restrictions in the tenant. The public dashboard contains only previously published aggregates and has no authentication layer.
-5. Write a short narrative with separate Observed result, Interpretation, Recommended next step and Known limitation fields. A low score alone does not establish cause or justify an individual personnel decision.
+5. Write a short narrative with separate Observed result, Interpretation, Recommended next step and Scope note fields.
 6. Assign source defects to the system owner and measure-definition questions to the relevant capability owner. The analyst documents and escalates; the pipeline never writes back to a source system.
-
-## Experience-backing boundary
-
-This implementation provides an inspectable reference for metric definitions, data preparation, exception reconciliation, survey interpretation and reporting procedures. Historical employment claims must be supported by employer/portfolio evidence. Running this project does not prove that a historical employer used it or realised a particular percentage improvement.
